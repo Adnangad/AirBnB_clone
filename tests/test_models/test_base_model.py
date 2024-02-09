@@ -24,7 +24,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(a, "created_at"))
         self.assertTrue(hasattr(b, "updated_at"))
         self.assertNotEqual(b.id, a.id)
-        self.assertIsInsatnce(b.id, str)
+        self.assertIsInstance(b.id, str)
         c = a.created_at
         self.assertIsInstance(c, datetime.datetime)
 
@@ -45,14 +45,14 @@ class TestBaseModel(unittest.TestCase):
         rep = str(a)
         nm = a.__class__.__name__
         self.assertIn(f"[{nm}]", rep)
-        self.assertIn(f"({a.id}]", rep)
+        self.assertIn(f"({a.id})", rep)
 
     def test_todict(self):
         """This method tests the to_dict method."""
         a = BaseModel()
         c = a.to_dict()
-        self.assertIsInstaance(c, dict)
-        self.assertIn(c, "created_at")
+        self.assertIsInstance(c, dict)
+        self.assertIn("created_at", c)
         self.assertIn("__class__", c)
         self.assertEqual(c["__class__"], "BaseModel")
         self.assertIn("updated_at", c)
