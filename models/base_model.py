@@ -16,6 +16,15 @@ class BaseModel():
         self.created_at = datetime.datetime.now()
         self.updated_at = self.created_at
 
+        if kwargs:
+            for key, val in kwargs.items():
+                if key != "__class__":
+                    if key in ["updated_at", "created_at"]:
+                        val = datetime.datetime.strptime(val, "%Y-%m-%dT%H:%M:%S.%f")
+                        setattr(self, key, val)
+                    else:
+                        setattr(self, key, val)
+
     def __str__(self):
         """
         This method returns the string rep of object.

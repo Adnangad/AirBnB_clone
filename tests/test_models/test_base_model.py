@@ -58,3 +58,27 @@ class TestBaseModel(unittest.TestCase):
         self.assertIn("updated_at", c)
         self.assertEqual(c["created_at"], a.created_at.isoformat())
         self.assertEqual(c["updated_at"], a.updated_at.isoformat())
+
+    def test_kwargs(self):
+        """This method tests the custom initialization."""
+        custom_id = str(uuid.uuid4())
+        custom_name = "Custom Name"
+        custom_created_at = "2024-02-05T18:22:12.123456"
+        custom_updated_at = "2024-02-05T18:22:12.123456"
+        custom_number = 123
+        obj = BaseModel(
+                id=custom_id,
+                name=custom_name,
+                created_at=custom_created_at,
+                updated_at=custom_updated_at,
+                number=custom_number
+                )
+        self.assertEqual(obj.id, custom_id)
+        self.assertEqual(obj.name, custom_name)
+        self.assertEqual(
+                obj.created_at,
+                datetime.datetime.fromisoformat(custom_created_at))
+        self.assertEqual(
+                obj.updated_at,
+                datetime.datetime.fromisoformat(custom_updated_at))
+        self.assertEqual(obj.number, custom_number)
