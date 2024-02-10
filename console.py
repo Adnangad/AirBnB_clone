@@ -6,9 +6,6 @@ import cmd
 
 
 class HBNBCommand(cmd.Cmd):
-    """
-    this is usd to manipulate objects.
-    """
     prompt = "(hbnb) "
 
     def do_quit(self, args):
