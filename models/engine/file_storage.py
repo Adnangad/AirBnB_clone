@@ -46,10 +46,12 @@ class FileStorage:
         """
         Desirializes the obj from a file.
         """
-        if os.path.isfile(FileStorage.__file_path):
+        try:
             with open(FileStorage.__file_path, "r") as f:
                 r = json.load(f)
                 for dat in r.values():
                     clas_name = dat["__class__"]
                     del dat["__class__"]
                     self.new(eval(clas_name)(**dat))
+        except FileNotFoundError:
+            pass
