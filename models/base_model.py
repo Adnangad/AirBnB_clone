@@ -4,6 +4,7 @@ This module contains the BaseModel class that will be used for this project.
 """
 import datetime
 import uuid
+import models
 
 
 class BaseModel():
@@ -20,10 +21,15 @@ class BaseModel():
             for key, val in kwargs.items():
                 if key != "__class__":
                     if key in ["updated_at", "created_at"]:
-                        val = datetime.datetime.strptime(val, "%Y-%m-%dT%H:%M:%S.%f")
+                        val = datetime.datetime.strptime(
+                                val,
+                                "%Y-%m-%dT%H:%M:%S.%f"
+                                )
                         setattr(self, key, val)
                     else:
                         setattr(self, key, val)
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -36,10 +42,11 @@ class BaseModel():
         Updates the updated_at attr with the updates time.
         """
         self.updated_at = datetime.datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
-        returns a dictionary containing all keys/values of __dict__ of the instance.
+        returns a dictionary containing all keys instance.
         """
         dic = self.__dict__.copy()
         dic["__class__"] = self.__class__.__name__
