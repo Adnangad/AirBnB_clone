@@ -74,16 +74,19 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """Prints string rep of all inst based or not on class name"""
+        hold = []
         if args is None or args == '':
             for i in storage.all().values():
-                print(i)
+                hold.append(i.__str__())
+                print(hold)
         else:
             if args not in HBNBCommand.__inputs:
                 print("** class doesn't exist **")
             else:
                 for k in storage.all().values():
                     if k.__class__.__name__ == args:
-                        print(k)
+                        hold.append(k.__str__())
+                        print(hold)
 
     def do_update(self, args):
         """Updates inst based on clas name, id by adding or updating attr"""
