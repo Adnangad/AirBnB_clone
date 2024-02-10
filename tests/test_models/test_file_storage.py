@@ -19,7 +19,7 @@ class TestFileStorage(unittest.TestCase):
         This sets up some variable that we'll use.
         """
         self.storage = FileStorage()
-        self.file_path = "/AirBnB_clone/tests/test_models/file.json"
+        self.file_path = "file.json"
 
     def tearDown(self):
         """

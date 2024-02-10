@@ -5,6 +5,7 @@ This module contains a class
 import os.path
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
