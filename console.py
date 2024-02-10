@@ -16,14 +16,15 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """
-        This cmd exits the prompt.
+        Qiut command to exit the programm.
         """
         return True
 
     def do_EOF(self, args):
         """
-        This cmd exits the prompt.
+        EOF command to exit the programm.
         """
+        print()
         return True
 
     def do_emptyline(self, args):
