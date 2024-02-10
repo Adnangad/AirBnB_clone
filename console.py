@@ -3,9 +3,6 @@
 This is a cmd line interprator.
 """
 import cmd
-from models import storage
-from models.base_model import BaseModel
-from models.engine.file_storage import FileStorage
 
 
 class HBNBCommand(cmd.Cmd):
@@ -15,15 +12,11 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     def do_quit(self, args):
-        """
-        Qiut command to exit the programm.
-        """
+        """Qiut command to exit the programm"""
         return True
 
     def do_EOF(self, args):
-        """
-        EOF command to exit the programm.
-        """
+        """EOF command to exit the programm"""
         print()
         return True
 
