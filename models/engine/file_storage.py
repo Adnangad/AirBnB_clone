@@ -18,7 +18,7 @@ class FileStorage:
         """
         Returns the dictionary objects.
         """
-        return FileStorage.__objects
+        return self.__objects
 
     def new(self, obj):
         """
@@ -30,13 +30,13 @@ class FileStorage:
         Return:
         None.
         """
-        FileStorage.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
+        self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
 
     def save(self):
         """
         Serializes the obj to a file.
         """
-        file_path = FileStorage.__file_path
+        file_path = self.__file_path
         obj = FileStorage.__objects
         serialized_obj = {o: obj[o].to_dict() for o in obj.keys()}
         with open(file_path, "w") as f:
@@ -47,7 +47,7 @@ class FileStorage:
         Desirializes the obj from a file.
         """
         try:
-            with open(FileStorage.__file_path, "r") as f:
+            with open(self.__file_path, "r") as f:
                 r = json.load(f)
                 for dat in r.values():
                     clas_name = dat["__class__"]
