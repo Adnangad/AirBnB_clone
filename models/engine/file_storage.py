@@ -7,11 +7,11 @@ import json
 from models.base_model import BaseModel
 
 
-class FileStorage():
+class FileStorage:
     """
     This module serializes and deserializes objects.
     """
-    __file_path = "/AirBnB_clone/tests/test_models/file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
