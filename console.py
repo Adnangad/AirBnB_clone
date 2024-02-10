@@ -27,7 +27,8 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_emptyline(self, args):
-        None
+        """Handles empty lines."""
+        pass
 
 
 if __name__ == '__main__':
