@@ -11,7 +11,15 @@ from models.user import User
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    __inputs = ["BaseModel", "User"]
+    __inputs = [
+            "BaseModel",
+            "User",
+            "Amenity",
+            "Place",
+            "City",
+            "Review",
+            "State"
+            ]
 
     def do_quit(self, args):
         """Qiut command to exit the programm"""
