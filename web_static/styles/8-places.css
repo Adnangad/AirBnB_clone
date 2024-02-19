@@ -8,7 +8,7 @@
 }
 .p_name{
     padding-top: 30px;
-    margin-bottom: -25px;
+    margin-bottom: -20px;
 }
 .art{
     display: flex;
@@ -31,7 +31,7 @@ article{
 }
 article h2{
     font-size: 30px;
-    margin-top: -1px;
+    margin-top: 0;
     padding-left: 0%;
 }
 .art_name{
@@ -49,9 +49,9 @@ article h2{
     align-items: center;
     margin-left: auto;
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 20px;
-    margin-top: -5px;
+    margin-top: -7px;
 }
 .price{
     display: flex;
@@ -76,7 +76,7 @@ article h2{
     width: inherit;
     background: url("../images/icon_group.png");
     background-repeat: no-repeat;
-    margin-left: 35px;
+    margin-left: 33px;
 }
 .g_number h2{
     font-size: 14px;
@@ -96,7 +96,7 @@ article h2{
     width: inherit;
     background: url("../images/icon_bed.png");
     background-repeat: no-repeat;
-    margin-left: 35px;
+    margin-left: 33px;
 }
 .num_room h2{
     font-size: 14px;
@@ -116,7 +116,7 @@ article h2{
     width: inherit;
     background: url("../images/icon_bath.png");
     background-repeat: no-repeat;
-    margin-left: 35px;
+    margin-left: 33px;
 }
 .num_baths h2{
     font-size: 14px;
@@ -126,11 +126,11 @@ article h2{
     font-size: 14px;
     color: #484848;
     text-align: left;
-    margin-top: 15px;
+    margin-top: 17px;
 }
 .description{
     font-size: 14px;
     text-align: left;
-    margin-top: 7px;
+    margin-top: 10px;
     margin-bottom: 0px;
 }
